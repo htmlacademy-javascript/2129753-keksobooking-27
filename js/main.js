@@ -1,4 +1,4 @@
-function getRandomIntInclusive(min, max) {
+const getRandomIntInclusive = (min, max) => {
   if (min >= 0 && max >= 0) {
     if (min <= max) {
       min = Math.ceil(min);
@@ -10,15 +10,16 @@ function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (min - max + 1)) + max;
     }
   } return NaN;
-} // за основу взят пример из раздела MDN web docs про Math.random()
+};
+// за основу взят пример из раздела MDN web docs про Math.random()
 // функция несовершенна: если передать ей два числа с плавающей точкой, всё равно вернёт целое число
 
-getRandomIntInclusive(5, 42)
+getRandomIntInclusive(5, 42);
 
-function getRandom(min, max, decimalPlaces) {
+const getRandom = (min, max, decimalPlaces) => {
   if (min >= 0 && max >= 0 && min <= max) { // здесь не буду менять числа местами, пусть юзер сразу вводит как надо
     return (Math.random() * (max - min) + min).toFixed(decimalPlaces); // метод toFixed() тоже нашла на MDN
   } return NaN;
-}
+};
 
-getRandom(26, 113, 3)
+getRandom(26, 113, 3);
