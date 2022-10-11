@@ -21,13 +21,16 @@ const getRandomFloat = (min, max, decimalPlaces) => {
 };
 
 const createAuthor = () => {
-  let randomUserNumber = toString(getRandomIntInclusive(1, 10));
+  const randomUserNumber = getRandomIntInclusive(1, 10);
   if (randomUserNumber < 10) {
-    randomUserNumber = `0${randomUserNumber}`;
+    return {
+      avatar: `img/avatars/user0${randomUserNumber}.png`
+    };
+  } else {
+    return {
+      avatar: `img/avatars/user${randomUserNumber}.png`,
+    };
   }
-  return {
-    avatar: `img/avatars/user${randomUserNumber}.png`,
-  };
 };
 
 const ACCOMODATION_TYPES = [
